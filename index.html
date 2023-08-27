@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test OpenLayers</title>
+
+  </head>
+  <body>
+    <div id="fullscreen" class="fullscreen">
+      <div id="map" tabindex="0"></div>
+      <div id="center">
+        <div id="crosshair"></div>
+      </div>
+      <div class="sidepanel">
+        <div class="">
+          <button id="select-area" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Select centre
+          </button>
+          <br />
+          <button id="pan-up" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Pan up
+          </button>
+          <button id="pan-left" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Pan left
+          </button>
+
+          <button id="pan-right" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Pan right
+          </button>
+          <button id="pan-down" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Pan down
+          </button>
+
+          <br />
+          <button id="zoom-out" class="govuk-button govuk-button--secondary" data-module="govuk-button">Zoom out</button>
+          <button id="zoom-in" class="govuk-button govuk-button--secondary" data-module="govuk-button">Zoom in</button>
+
+
+          <br />
+          <button id="clear-all" class="govuk-button govuk-button--secondary" data-module="govuk-button">Clear all</button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
