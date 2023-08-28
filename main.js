@@ -11,7 +11,7 @@ import GeoJSON from 'ol/format/GeoJSON.js';
 const GeoJSON_URL = "data/lad.json";
 const pin_URL = "assets/pin.png";
 // option to display a marker icon
-const displayMarker = false;
+let displayMarker = false;
 
 const iconFeature = new Feature({
   geometry: new Point([-165027.54, 7052978.36]) // sheffield
@@ -19,10 +19,10 @@ const iconFeature = new Feature({
 
 const defaultStyle = new Style({
   fill: new Fill({
-    color: 'rgba(255, 255, 255, 0.3)',
+    color: 'rgba(255, 255, 255, 0.1)',
   }),
   stroke: new Stroke({
-    color: 'rgba(0, 0, 0, 1)',
+    color: 'rgba(0, 0, 0, 0.1)',
     width: 0.5,
   }),
 });
@@ -107,7 +107,7 @@ map.on("moveend", function (e) {
 
 map.on('click', function (evt) {
   let coordinate = evt.coordinate;
-  //console.log(coordinate);
+  console.log(coordinate);
   addMarker(coordinate);
 });
 
@@ -125,7 +125,8 @@ function getCenterCoords() {
 
 function addMarker(center) {
   //const center = map.getView().getCenter(map.getSize());
-
+  displayMarker = document.querySelector('input[name=marker]:checked');
+  console.log(displayMarker);
   if(displayMarker){
     const iconFeature = new Feature({
       geometry: new Point(center)
@@ -134,11 +135,15 @@ function addMarker(center) {
     // add pin icon
     iconFeature.setStyle(iconStyle);
     vectorLayer.getSource().addFeature(iconFeature)
+  }else{
+
+    // find the polygon that contains the point
+    let polygon = LSOALayer.getSource().getFeaturesAtCoordinate(center)[0];
+    //console.log(polygon.getProperties().LAD13NM);
+    if(polygon){
+      polygon.setStyle(highlightStyle);
+    }
   }
-  // find the polygon that contains the point
-  let polygon = LSOALayer.getSource().getFeaturesAtCoordinate(center)[0];
-  //console.log(polygon.getProperties().LAD13NM);
-  polygon.setStyle(highlightStyle);
 }
 
 function clearAllMarkers() {
