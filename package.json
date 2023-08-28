@@ -4,6 +4,7 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
+    "deploy": "vite build --base=map",// sets the output path in index.html
     "serve": "vite preview"
   },
   "devDependencies": {

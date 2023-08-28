@@ -18,3 +18,4 @@ To generate a build ready for production:
 Then deploy the contents of the `dist` directory to your server.  You can also run `npm run serve` to serve the results of the `dist` directory for preview.
 
 
+Uses this GeoJSONL https://github.com/martinjc/UK-GeoJSON/blob/master/json/administrative/eng/lad.json
