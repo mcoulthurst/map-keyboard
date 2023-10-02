@@ -12,12 +12,17 @@ for (i=0;i<29;i++){
   const rasterLayer = new TileLayer({
     source: new OSM(),
   });
-  let zoom = i;
+   let zoom = 17;
+   let x = -165000 + i* 140;
+   let y = 7053000;
+/*   let zoom = i;
   if (i>19){
     zoom = 40 - i ;
-  }
+  } */
+
+
   let view = new View({
-    center: [-165027.54, 7052978.36],
+    center: [x, y],
     zoom: zoom,
     maxZoom: 20,
   });
