@@ -19,13 +19,13 @@ const vectorLayer = new VectorLayer({
   source: vectorSource,
 });
 
-const rasterLayer = new TileLayer({
+const tileLayer = new TileLayer({
   source: new OSM(),
 });
 
 const map = new Map({
   target: 'map',
-  layers: [rasterLayer, vectorLayer],
+  layers: [tileLayer, vectorLayer],
   view: new View({
     center: [-165027.54, 7052978.36],
     zoom: 8,
@@ -49,7 +49,6 @@ addInteraction();
 map.on('click', function (evt) {
   let coordinate = evt.coordinate;
   console.log(coordinate);
-  //addPoint(coordinate);
 });
 
 

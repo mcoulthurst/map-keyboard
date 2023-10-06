@@ -9,7 +9,7 @@ let i = 0;
 for (i=0;i<29;i++){
   console.log(i);
 
-  const rasterLayer = new TileLayer({
+  const tileLayer = new TileLayer({
     source: new OSM(),
   });
    let zoom = 17;
@@ -30,7 +30,7 @@ for (i=0;i<29;i++){
   array[i] = new Map({
     controls: [], //  hide attribution and zoom
     target: 'map'+i,
-    layers: [rasterLayer],
+    layers: [tileLayer],
     view: view
   });
 

@@ -83,13 +83,13 @@ const LSOALayer = new VectorLayer({
   style: defaultStyle,
 });
 
-const rasterLayer = new TileLayer({
+const tileLayer = new TileLayer({
   source: new OSM(),
 });
 
 const map = new Map({
   target: 'map',
-  layers: [rasterLayer, LSOALayer, vectorLayer],
+  layers: [tileLayer, LSOALayer, vectorLayer],
   view: new View({
     center: [-165027.54, 7052978.36],
     zoom: 8,
