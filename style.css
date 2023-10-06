@@ -70,11 +70,10 @@ button {
 .fullscreen {
   margin-bottom: 10px;
   width: 100%;
-  height: 400px;
+  height: 720px;
 }
 .sidepanel {
   position: absolute;
-
   width: 120px;
   top: 70px;
   height: 540px;
@@ -88,6 +87,11 @@ button {
   color: #ffffff;
   display: block;
   text-align: center;
+}
+
+.tracer{
+  position: absolute;
+  left: 100px;
 }
 
 
