@@ -7,6 +7,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        draw: resolve(__dirname, 'draw.html'),
         multiples: resolve(__dirname, 'multiples.html'),
       },
     },
