@@ -6,8 +6,12 @@ import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer.js';
 const array = [];
 let i = 0;
 
-for (i=0;i<29;i++){
-  console.log(i);
+for (i=0;i<=99;i++){
+  // add div
+  var iDiv = document.createElement('div');
+  iDiv.id = 'map'+i;
+  iDiv.className = 'map';
+  document.getElementById('fullscreen').appendChild(iDiv);
 
   const tileLayer = new TileLayer({
     source: new OSM(),
